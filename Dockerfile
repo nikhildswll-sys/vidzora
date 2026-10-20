@@ -1,29 +1,26 @@
 FROM python:3.11-slim
 
-# Install ffmpeg and system dependencies
+# Install system ffmpeg
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Set up working directory
-WORKDIR /code
+WORKDIR /app
 
-# Create a non-root user (Hugging Face standard)
-RUN useradd -m -u 1000 user
-USER user
-ENV HOME=/home/user \
-    PATH=/home/user/.local/bin:$PATH
-
-# Copy requirements and install
-COPY --chown=user:user requirements.txt /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+# Install python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copy application files
-COPY --chown=user:user . /code
+COPY . .
 
-# Expose port 7860 (Hugging Face default)
-EXPOSE 7860
+# Ensure downloads directory exists with full write permissions
+RUN mkdir -p downloads && chmod -R 777 downloads
 
-# Run uvicorn on port 7860
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Render sets PORT environment variable (default 10000)
+ENV PORT=10000
+EXPOSE 10000
+
+# Start Uvicorn bound to 0.0.0.0 and dynamic $PORT
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
