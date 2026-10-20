@@ -21,6 +21,14 @@ class VideoService:
             'skip_download': True,
             'extract_flat': False,
             'ffmpeg_location': FFMPEG_PATH,
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['ios', 'android', 'web_creator', 'mweb'],
+                }
+            },
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1',
+            }
         }
         
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -83,6 +91,14 @@ class VideoService:
             'extract_flat': False,
             'ffmpeg_location': FFMPEG_PATH,
             'js_runtimes': {'node': {}},
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['ios', 'android', 'web_creator', 'mweb'],
+                }
+            },
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1',
+            }
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=False)
