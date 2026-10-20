@@ -3,6 +3,8 @@ uvicorn
 yt-dlp
 imageio-ffmpeg
 httpx
+requests
 qrcode
 pillow
 pydantic
+python-multipart
