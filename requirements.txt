@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+yt-dlp
+imageio-ffmpeg
+httpx
+qrcode
+pillow
+pydantic

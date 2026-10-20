@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>VidZora — Fast Unlimited Video & Music Downloader (HD & 4K)</title>
+    
+    <!-- PWA & Mobile Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <link rel="icon" type="image/png" href="/icon-192.png">
+
+    <!-- SEO Meta Tags & High-Volume Ranking Keywords -->
+    <meta name="description" content="VidZora is the #1 free online video downloader. Download videos, reels, shorts, and 320kbps MP3 music from YouTube, Instagram, TikTok, Facebook, Twitter (X) without watermark in 1080p, 2K, 4K HD. 100% free, unlimited, no login needed.">
+    <meta name="keywords" content="youtube video downloader, download youtube shorts, youtube to mp3 converter, download youtube 1080p, ytmp3, y2mate alternative, savefrom alternative, snaptik alternative, ssstik, instagram reels downloader, download instagram reels with audio, ig story downloader, facebook video downloader online, fb reel download, twitter video downloader, x video downloader, tiktok video downloader without watermark, pinterest video downloader, reddit video audio download, soundcloud to mp3, vimeo downloader, free online video downloader, best video downloader 2026, 4k video downloader online, bulk video downloader, video trimmer online free, mobile video downloader app, download reels online, convert video to mp3 online, fast video saver">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="VidZora">
+    <link rel="canonical" href="https://vidzoraweb.web.app/">
+
+    <!-- Social OpenGraph Tags -->
+    <meta property="og:title" content="VidZora — Free Unlimited Video & Music Downloader (HD & 4K)">
+    <meta property="og:description" content="Download any video, reel, short or MP3 audio from 1000+ websites in 1080p and 4K without watermarks. Direct browser streaming.">
+    <meta property="og:image" content="/icon-512.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidzoraweb.web.app/">
+    <meta property="og:site_name" content="VidZora">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VidZora — Free Unlimited Video & Music Downloader">
+    <meta name="twitter:description" content="Download any video or reel from 1000+ websites with direct browser streaming.">
+    <meta name="twitter:image" content="/icon-512.png">
+
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://vidzoraweb.web.app/#webapp",
+          "name": "VidZora Video & Audio Downloader",
+          "url": "https://vidzoraweb.web.app/",
+          "description": "Free unlimited online video and audio downloader for YouTube, Instagram Reels, TikTok without watermark, Facebook, Twitter, and 1000+ platforms in 4K, 1080p, and MP3.",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "All (Android, iOS, Windows, macOS, Linux)",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "148250",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://vidzoraweb.web.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How to download YouTube videos and Shorts for free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Copy the YouTube video or Shorts link, paste it into the VidZora search box, select your preferred quality (4K, 1080p, 720p, or MP3), and click Download. The file streams directly into your browser."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I download TikTok videos without watermark?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! VidZora automatically strips all TikTok watermarks and delivers clean, crisp HD MP4 videos directly to your device."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to convert video links to MP3 at 320kbps?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Paste your link, select the 'MP3 Studio Audio (320k)' option, and click download. VidZora converts the audio stream on-the-fly and saves crystal-clear MP3 music."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is VidZora completely free with unlimited downloads?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, VidZora is 100% free with unlimited downloads. No sign-up, registration, or credit card is ever required."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        vidzora: {
+                            purple: '#7c3aed',
+                            blue: '#4f46e5',
+                            indigo: '#6366f1',
+                            pink: '#ec4899',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=8.0">
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#0b0f19] text-gray-900 dark:text-gray-100 min-h-screen font-sans selection:bg-purple-600 selection:text-white transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Top Glow Background -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] bg-gradient-to-b from-purple-200/40 via-indigo-100/30 to-transparent dark:from-purple-900/20 dark:via-indigo-900/10 pointer-events-none -z-10 blur-3xl"></div>
+
+    <!-- Header Navigation -->
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative z-50">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/30 text-white font-extrabold text-lg">
+                <i data-lucide="play" class="w-5 h-5 fill-white text-white ml-0.5"></i>
+            </div>
+            <div class="flex items-baseline">
+                <span class="text-2xl font-black tracking-tight text-gray-950 dark:text-white">Vid<span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Zora</span></span>
+            </div>
+        </a>
+
+        <!-- Center Nav Links -->
+        <nav class="hidden lg:flex items-center gap-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gray-200/80 dark:border-gray-800 shadow-sm text-xs font-semibold text-gray-600 dark:text-gray-300">
+            <a href="/" class="px-3.5 py-1.5 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-bold transition">Home</a>
+            <a href="#downloader" class="px-3 py-1.5 rounded-full hover:text-purple-600 dark:hover:text-purple-400 transition">Downloader</a>
+            <a href="#api-pricing" class="px-3.5 py-1.5 rounded-full text-purple-600 dark:text-purple-400 font-bold transition flex items-center gap-1.5">
+                <span>API Pricing</span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/60 text-purple-700 dark:text-purple-300 font-black tracking-wide uppercase">New</span>
+            </a>
+            <button onclick="openModal('supported-modal')" class="px-3 py-1.5 rounded-full hover:text-purple-600 dark:hover:text-purple-400 transition">Supported Sites</button>
+            <a href="#tools" class="px-3 py-1.5 rounded-full hover:text-purple-600 dark:hover:text-purple-400 transition">Tools</a>
+            <button onclick="openModal('bookmarklet-modal')" class="px-3 py-1.5 rounded-full hover:text-purple-600 dark:hover:text-purple-400 transition">Bookmarklet</button>
+            <button onclick="openModal('blog-modal')" class="px-3 py-1.5 rounded-full hover:text-purple-600 dark:hover:text-purple-400 transition">Blog</button>
+            <button onclick="openModal('faq-modal')" class="px-3 py-1.5 rounded-full hover:text-purple-600 dark:hover:text-purple-400 transition">FAQ</button>
+        </nav>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-2 sm:gap-3">
+            <!-- PWA Install App Button -->
+            <button id="btn-pwa-install" onclick="triggerPwaInstall()" class="hidden px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-bold text-xs hover:bg-emerald-500/20 transition flex items-center gap-1.5">
+                <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                <span>Install App</span>
+            </button>
+
+            <!-- Theme Toggle Button -->
+            <button onclick="toggleDarkMode()" title="Toggle Theme" class="w-9 h-9 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 shadow-sm transition">
+                <i id="theme-icon" data-lucide="moon" class="w-4 h-4"></i>
+            </button>
+
+            <!-- Language Dropdown -->
+            <div class="relative">
+                <button onclick="toggleLangMenu()" class="flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-purple-400 transition">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-gray-500"></i>
+                    <span id="current-lang">English</span>
+                    <i data-lucide="chevron-down" class="w-3 h-3 text-gray-400"></i>
+                </button>
+                <div id="lang-menu" class="hidden absolute right-0 mt-2 w-32 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xl py-1 z-50 text-xs font-semibold">
+                    <button onclick="setLanguage('English')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50">English</button>
+                    <button onclick="setLanguage('Hindi')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50">हिंदी (Hindi)</button>
+                    <button onclick="setLanguage('Spanish')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50">Español</button>
+                </div>
+            </div>
+
+            <!-- Free & Unlimited Button -->
+            <a href="#downloader" class="hidden sm:flex px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white font-bold text-xs shadow-md shadow-purple-500/25 hover:shadow-lg hover:shadow-purple-500/40 transition transform active:scale-95 items-center gap-1.5">
+                <span>Free & Unlimited</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section Container with Floating Decorative Cards -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-14 relative">
+
+        <!-- Floating Card Left 1 (YouTube 4K) -->
+        <div class="hidden xl:block absolute left-4 top-16 w-44 rounded-2xl p-2 bg-white/90 dark:bg-gray-900/90 shadow-2xl border border-gray-200/80 dark:border-gray-800 -rotate-6 transform hover:rotate-0 transition duration-300 backdrop-blur-md z-10 pointer-events-none select-none">
+            <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-gray-950">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/75 text-white font-extrabold text-[9px] uppercase tracking-wider backdrop-blur-sm">4K</span>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                        <i data-lucide="play" class="w-4 h-4 fill-purple-600 text-purple-600 ml-0.5"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[10px] text-white font-semibold">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/></svg>
+                    <span>YouTube</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Card Left 2 (Instagram Reels) -->
+        <div class="hidden xl:block absolute left-8 top-80 w-36 rounded-2xl p-2 bg-white/90 dark:bg-gray-900/90 shadow-2xl border border-gray-200/80 dark:border-gray-800 rotate-6 transform hover:rotate-0 transition duration-300 backdrop-blur-md z-10 pointer-events-none select-none">
+            <div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-gray-950">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-7 h-7 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                        <i data-lucide="play" class="w-3.5 h-3.5 fill-pink-600 text-pink-600 ml-0.5"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[9px] text-white font-semibold">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24"><defs><radialGradient id="ig-fl-grad" r="150%" cx="30%" cy="107%"><stop offset="0" stop-color="#fdf497"/><stop offset="0.05" stop-color="#fdf497"/><stop offset="0.45" stop-color="#fd5949"/><stop offset="0.6" stop-color="#d6249f"/><stop offset="0.9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-fl-grad)"/><path d="M12 7.02c-2.748 0-4.98 2.232-4.98 4.98s2.232 4.98 4.98 4.98 4.98-2.232 4.98-4.98-2.232-4.98-4.98-4.98zm0 8.21a3.23 3.23 0 1 1 0-6.46 3.23 3.23 0 0 1 0 6.46zm6.34-8.39a1.16 1.16 0 1 1-2.32 0 1.16 1.16 0 0 1 2.32 0zm2.66 3.17c-.06-1.28-.35-2.42-1.28-3.35-.93-.93-2.07-1.22-3.35-1.28-1.32-.08-5.28-.08-6.6 0-1.28.06-2.42.35-3.35 1.28-.93.93-1.22 2.07-1.28 3.35-.08 1.32-.08 5.28 0 6.6.06 1.28.35 2.42 1.28 3.35.93.93 2.07 1.22 3.35 1.28 1.32.08 5.28.08 6.6 0 1.28-.06 2.42-.35 3.35-1.28.93-.93 1.22-2.07 1.28-3.35.08-1.32.08-5.28 0-6.6z" fill="#FFFFFF"/></svg>
+                    <span>Reels</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Card Right 1 (TikTok Action HD) -->
+        <div class="hidden xl:block absolute right-4 top-16 w-44 rounded-2xl p-2 bg-white/90 dark:bg-gray-900/90 shadow-2xl border border-gray-200/80 dark:border-gray-800 rotate-6 transform hover:rotate-0 transition duration-300 backdrop-blur-md z-10 pointer-events-none select-none">
+            <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-gray-950">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/75 text-white font-extrabold text-[9px] uppercase tracking-wider backdrop-blur-sm">HD</span>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                        <i data-lucide="play" class="w-4 h-4 fill-indigo-600 text-indigo-600 ml-0.5"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[10px] text-white font-semibold">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#000000"/><path d="M16.6 8.2c-.8-.5-1.4-1.3-1.6-2.2h-2.4v10.2c0 1.3-1 2.4-2.4 2.4-1.3 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4.2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.7 0-4.9 2.2-4.9 4.9 0 2.7 2.2 4.9 4.9 4.9 2.7 0 4.9-2.2 4.9-4.9V9.5c1 .7 2.2 1.1 3.4 1.1V8.2c-.8 0-1.4 0-1.9-.0z" fill="#25F4EE"/><path d="M17.1 8.2c-.8-.5-1.4-1.3-1.6-2.2h-2.4v10.2c0 1.3-1 2.4-2.4 2.4-1.3 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4.2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.7 0-4.9 2.2-4.9 4.9 0 2.7 2.2 4.9 4.9 4.9 2.7 0 4.9-2.2 4.9-4.9V9.5c1 .7 2.2 1.1 3.4 1.1V8.2c-.8 0-1.4 0-1.9-.0z" fill="#FE2C55" style="mix-blend-mode: lighten"/><path d="M16.8 8.2c-.8-.5-1.4-1.3-1.6-2.2h-2.4v10.2c0 1.3-1 2.4-2.4 2.4-1.3 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4.2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.7 0-4.9 2.2-4.9 4.9 0 2.7 2.2 4.9 4.9 4.9 2.7 0 4.9-2.2 4.9-4.9V9.5c1 .7 2.2 1.1 3.4 1.1V8.2c-.8 0-1.4 0-1.9-.0z" fill="#FFFFFF"/></svg>
+                    <span>TikTok</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Card Right 2 (Nature MP3) -->
+        <div class="hidden xl:block absolute right-8 top-80 w-36 rounded-2xl p-2 bg-white/90 dark:bg-gray-900/90 shadow-2xl border border-gray-200/80 dark:border-gray-800 -rotate-6 transform hover:rotate-0 transition duration-300 backdrop-blur-md z-10 pointer-events-none select-none">
+            <div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-gray-950">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-7 h-7 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                        <i data-lucide="play" class="w-3.5 h-3.5 fill-purple-600 text-purple-600 ml-0.5"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[9px] text-white font-semibold">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF5500"/><path d="M12 7v7.2a2.8 2.8 0 1 0 2 2.7V9.5h3V7h-5z" fill="#FFFFFF"/></svg>
+                    <span>MP3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Hero Content -->
+        <div class="max-w-3xl mx-auto text-center space-y-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 text-[11px] sm:text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
+                <span class="text-amber-500">⚡</span>
+                <span>Fast</span>
+                <span class="text-gray-300 dark:text-gray-700">•</span>
+                <span>Free</span>
+                <span class="text-gray-300 dark:text-gray-700">•</span>
+                <span>No Watermark</span>
+                <span class="text-gray-300 dark:text-gray-700">•</span>
+                <span>Unlimited Downloads</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-gray-950 dark:text-white leading-[1.1]">
+                Download Any Video<br>
+                From <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400">Anywhere</span>
+            </h1>
+
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+                Download videos, reels, shorts, stories and more from 1000+ websites in high quality. No login required. Just paste the link and download.
+            </p>
+        </div>
+
+        <!-- Main Central Interactive Downloader Card -->
+        <div id="downloader" class="max-w-2xl mx-auto mt-8 bg-white dark:bg-gray-900 rounded-3xl p-5 sm:p-7 shadow-2xl shadow-purple-500/10 border border-gray-200/80 dark:border-gray-800 relative z-20">
+            
+            <!-- 4 Working Sub-tabs -->
+            <div class="flex items-center gap-3 sm:gap-6 border-b border-gray-100 dark:border-gray-800 pb-3 mb-5 overflow-x-auto whitespace-nowrap flex-nowrap no-scrollbar text-xs font-bold text-gray-500">
+                <button type="button" onclick="switchMainTab('single')" id="tab-single" class="main-tab active flex items-center gap-1.5 pb-2 border-b-2 border-purple-600 text-purple-600 dark:text-purple-400 transition flex-shrink-0">
+                    <i data-lucide="link" class="w-3.5 h-3.5"></i>
+                    <span>Paste Link</span>
+                </button>
+                <button type="button" onclick="switchMainTab('upload')" id="tab-upload" class="main-tab flex items-center gap-1.5 pb-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition flex-shrink-0">
+                    <i data-lucide="file-up" class="w-3.5 h-3.5"></i>
+                    <span>Upload File</span>
+                </button>
+                <button type="button" onclick="switchMainTab('bulk')" id="tab-bulk" class="main-tab flex items-center gap-1.5 pb-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition flex-shrink-0">
+                    <i data-lucide="download-cloud" class="w-3.5 h-3.5"></i>
+                    <span>Bulk Download</span>
+                </button>
+                <button type="button" onclick="switchMainTab('many')" id="tab-many" class="main-tab flex items-center gap-1.5 pb-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition flex-shrink-0">
+                    <i data-lucide="list-video" class="w-3.5 h-3.5"></i>
+                    <span>Many Links</span>
+                </button>
+            </div>
+
+            <!-- VIEW 1: Single Link Mode (Default) -->
+            <div id="view-single" class="tab-view space-y-4">
+                <form id="fetch-form" onsubmit="handleExtract(event)" class="space-y-4">
+                    <div class="relative flex items-center">
+                        <div class="absolute left-4 text-gray-400">
+                            <i data-lucide="link-2" class="w-5 h-5 text-gray-400"></i>
+                        </div>
+                        <input 
+                            type="url" 
+                            id="url-input" 
+                            required 
+                            autocomplete="off"
+                            placeholder="Paste video link here (e.g. https://youtu.be/...)"
+                            class="w-full bg-[#f8fafc] dark:bg-gray-950 border border-gray-200 dark:border-gray-700/80 focus:border-purple-600 focus:ring-4 focus:ring-purple-500/10 text-gray-950 dark:text-white placeholder-gray-400 text-sm sm:text-base rounded-2xl pl-12 pr-28 py-4 transition outline-none shadow-inner"
+                        >
+                        <div class="absolute right-3 flex items-center gap-1.5">
+                            <button 
+                                type="button" 
+                                id="btn-paste" 
+                                onclick="pasteFromClipboard()" 
+                                title="Paste from clipboard"
+                                class="text-xs font-bold text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/80 hover:bg-purple-200 dark:hover:bg-purple-900 px-2.5 py-1.5 rounded-xl flex items-center gap-1 transition shadow-sm"
+                            >
+                                <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
+                                <span>Paste</span>
+                            </button>
+                            <button 
+                                type="button" 
+                                onclick="clearInput()" 
+                                title="Clear input"
+                                class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1"
+                            >
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-1">
+                        <!-- Auto Detect Interactive Dropdown -->
+                        <div class="relative w-full sm:w-auto">
+                            <button type="button" onclick="toggleAutoDetectMenu()" class="w-full sm:w-auto flex items-center justify-between gap-2 px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 transition">
+                                <span class="flex items-center gap-1.5">
+                                    <i data-lucide="settings" class="w-3.5 h-3.5 text-purple-600"></i>
+                                    <span id="autodetect-label">Auto Detect</span>
+                                </span>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gray-400"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div id="autodetect-menu" class="hidden absolute left-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xl py-1 z-50 text-xs font-semibold">
+                                <button type="button" onclick="setAutoDetectMode('Auto Detect', '720')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50 flex items-center gap-2">⚙️ Auto Detect (Default)</button>
+                                <button type="button" onclick="setAutoDetectMode('Force 1080p MP4', '1080')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50 flex items-center gap-2">🎬 Best 1080p Video</button>
+                                <button type="button" onclick="setAutoDetectMode('Audio Only (MP3)', 'mp3_320')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50 flex items-center gap-2">🎵 MP3 Audio (320k)</button>
+                                <button type="button" onclick="setAutoDetectMode('Fast 720p HD', '720')" class="w-full text-left px-3 py-2 hover:bg-purple-50 dark:hover:bg-purple-950/50 flex items-center gap-2">⚡ Ultra Fast (720p)</button>
+                            </div>
+                        </div>
+
+                        <!-- Big Gradient CTA -->
+                        <button 
+                            type="submit" 
+                            id="btn-fetch"
+                            class="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-xl shadow-purple-500/30 transition transform active:scale-98 flex items-center justify-center gap-2"
+                        >
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            <span id="btn-text">Download</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Format Selector Chips -->
+                    <div class="flex items-center gap-2 pt-2 overflow-x-auto pb-1 text-xs font-bold text-gray-600 dark:text-gray-300">
+                        <button type="button" onclick="selectQuickChip('mp4')" id="chip-mp4" class="quick-chip active px-3.5 py-1.5 rounded-lg border border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 flex items-center gap-1.5 transition">
+                            <i data-lucide="play" class="w-3 h-3 fill-purple-600 text-purple-600"></i>
+                            <span>Video (MP4)</span>
+                        </button>
+                        <button type="button" onclick="selectQuickChip('mp3')" id="chip-mp3" class="quick-chip px-3.5 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 hover:border-purple-400 flex items-center gap-1.5 transition">
+                            <i data-lucide="music" class="w-3 h-3 text-pink-500"></i>
+                            <span>Audio (MP3)</span>
+                        </button>
+                        <button type="button" onclick="selectQuickChip('hd')" id="chip-hd" class="quick-chip px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 hover:border-purple-400 flex items-center gap-1.5 transition">
+                            <span class="px-1 py-0.2 rounded bg-amber-500 text-white text-[9px] font-black">HD</span>
+                            <span>HD Quality</span>
+                        </button>
+                        <button type="button" onclick="selectQuickChip('4k')" id="chip-4k" class="quick-chip px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 hover:border-purple-400 flex items-center gap-1.5 transition">
+                            <span class="px-1 py-0.2 rounded bg-orange-500 text-white text-[9px] font-black">4K</span>
+                            <span>4K Quality</span>
+                        </button>
+                        <button type="button" onclick="selectQuickChip('thumb')" id="chip-thumb" class="quick-chip px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 hover:border-amber-400 flex items-center gap-1.5 transition">
+                            <i data-lucide="image" class="w-3 h-3 text-amber-500"></i>
+                            <span>Thumbnail (HD)</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- VIEW 2: Upload File / Converter Mode -->
+            <div id="view-upload" class="tab-view hidden space-y-4">
+                <div class="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-2xl p-6 text-center space-y-3 bg-gray-50/50 dark:bg-gray-950/50 hover:border-purple-500 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 flex items-center justify-center mx-auto">
+                        <i data-lucide="file-up" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-900 dark:text-white">Choose any local video or audio file</h4>
+                        <p class="text-xs text-gray-500 mt-1">Convert MP4, MKV, MOV, WEBM to MP3 Audio or MP4</p>
+                    </div>
+                    <input type="file" id="local-file-input" class="hidden" onchange="handleFileSelect(this)">
+                    <button type="button" onclick="document.getElementById('local-file-input').click()" class="px-5 py-2.5 rounded-xl bg-purple-600 text-white text-xs font-bold hover:bg-purple-500 shadow-md">
+                        Browse Computer
+                    </button>
+                    <p id="selected-file-label" class="text-xs font-semibold text-purple-600 hidden">No file chosen</p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <select id="upload-target-fmt" class="px-3 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-xs font-bold outline-none border border-gray-300 dark:border-gray-700">
+                        <option value="mp3">Convert to MP3 (Audio)</option>
+                        <option value="mp4">Convert to MP4 (Video)</option>
+                    </select>
+                    <button type="button" onclick="processLocalUpload()" id="btn-convert-upload" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs shadow-md">
+                        Convert & Save Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- VIEW 3: Bulk Download Mode -->
+            <div id="view-bulk" class="tab-view hidden space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5">Paste Multiple URLs (One per line):</label>
+                    <textarea 
+                        id="bulk-urls-input" 
+                        rows="4" 
+                        placeholder="https://youtu.be/...&#10;https://instagram.com/reel/...&#10;https://tiktok.com/@user/video/..." 
+                        class="w-full bg-[#f8fafc] dark:bg-gray-950 border border-gray-200 dark:border-gray-700/80 rounded-2xl p-3.5 text-xs font-mono text-gray-900 dark:text-white outline-none focus:border-purple-600"
+                    ></textarea>
+                </div>
+                <button type="button" onclick="processBulkDownload()" id="btn-bulk-download" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white font-extrabold text-sm shadow-xl shadow-purple-500/25 flex items-center justify-center gap-2">
+                    <i data-lucide="archive" class="w-4 h-4"></i>
+                    <span>Download All As ZIP Archive</span>
+                </button>
+            </div>
+
+            <!-- VIEW 4: Many Links / Playlist Mode -->
+            <div id="view-many" class="tab-view hidden space-y-4">
+                <div class="p-4 rounded-2xl bg-purple-50/50 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-900/40 text-xs text-purple-700 dark:text-purple-300 space-y-1">
+                    <p class="font-bold flex items-center gap-1.5"><i data-lucide="list-video" class="w-4 h-4"></i> Playlist & Channel Multi-Downloader</p>
+                    <p class="text-[11px] text-gray-600 dark:text-gray-400">Paste any YouTube playlist, artist album, or multiple links to download the entire list.</p>
+                </div>
+                <input 
+                    type="url" 
+                    id="many-input" 
+                    placeholder="Paste YouTube Playlist URL or multi-track album..."
+                    class="w-full bg-[#f8fafc] dark:bg-gray-950 border border-gray-200 dark:border-gray-700/80 rounded-2xl px-4 py-3.5 text-xs text-gray-900 dark:text-white outline-none"
+                >
+                <button type="button" onclick="processManyLinks()" class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs shadow-md flex items-center justify-center gap-2">
+                    <i data-lucide="play-circle" class="w-4 h-4"></i>
+                    <span>Extract Playlist Items</span>
+                </button>
+                <div id="many-results" class="max-h-56 overflow-y-auto space-y-2 pr-1"></div>
+            </div>
+
+            <!-- Loading Spinner State -->
+            <div id="loading-state" class="hidden py-8 text-center space-y-3">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-3 border-purple-600 border-t-transparent"></div>
+                <p class="text-xs text-gray-500 font-medium">Extracting media from server...</p>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="error-card" class="hidden mt-4 p-3.5 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-xs flex items-start gap-2.5">
+                <i data-lucide="alert-circle" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                <div id="error-msg">Could not load video. Please ensure the link is public and valid.</div>
+            </div>
+
+            <!-- Video Result Card Inside the Box -->
+            <div id="result-card" class="hidden mt-6 pt-5 border-t border-gray-100 dark:border-gray-800 space-y-4">
+                <div class="flex flex-col sm:flex-row gap-4 items-start">
+                    <div class="relative w-full sm:w-48 aspect-video rounded-2xl overflow-hidden bg-gray-950 flex-shrink-0 shadow-md group">
+                        <img id="res-thumbnail" src="" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <span id="res-duration" class="absolute bottom-2 left-2 bg-black/80 text-white text-[10px] font-mono font-bold px-1.5 py-0.5 rounded">00:00</span>
+                        <button type="button" onclick="downloadThumbnail('hd')" title="Download HD Thumbnail" class="absolute top-2 right-2 px-2.5 py-1 rounded-xl bg-black/75 hover:bg-black text-white text-[10px] font-bold flex items-center gap-1.5 backdrop-blur-md border border-white/10 transition shadow-lg">
+                            <i data-lucide="image" class="w-3.5 h-3.5 text-amber-400"></i>
+                            <span>Save HD</span>
+                        </button>
+                    </div>
+
+                    <div class="flex-1 min-w-0 space-y-2">
+                        <h3 id="res-title" class="font-bold text-sm text-gray-900 dark:text-white line-clamp-2">Title</h3>
+                        <p id="res-uploader-text" class="text-xs text-gray-500 flex items-center gap-1">Creator</p>
+
+                        <div id="format-options-grid" class="grid grid-cols-2 gap-2 pt-1">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Trimmer Accordion -->
+                <div class="p-3 rounded-2xl bg-purple-50/60 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-900/40 space-y-2">
+                    <label class="flex items-center justify-between cursor-pointer select-none">
+                        <div class="flex items-center gap-2 text-xs font-bold text-gray-800 dark:text-gray-200">
+                            <i data-lucide="scissors" class="w-3.5 h-3.5 text-purple-600"></i>
+                            <span>Trim / Cut Video Clip (Custom Segment)</span>
+                        </div>
+                        <input type="checkbox" id="trim-toggle" onchange="toggleTrimmerUI()" class="w-4 h-4 rounded text-purple-600 focus:ring-purple-500 cursor-pointer">
+                    </label>
+                    <div id="trim-inputs-box" class="hidden grid grid-cols-2 gap-3 pt-1 text-xs">
+                        <div>
+                            <span class="text-[10px] text-gray-500 font-semibold block mb-1">Start Time (mm:ss)</span>
+                            <input type="text" id="trim-start-time" placeholder="00:00" class="w-full px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-center font-mono font-bold text-gray-900 dark:text-white outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-gray-500 font-semibold block mb-1">End Time (mm:ss)</span>
+                            <input type="text" id="trim-end-time" placeholder="00:30" class="w-full px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-center font-mono font-bold text-gray-900 dark:text-white outline-none focus:border-purple-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Direct Save Button -->
+                <button 
+                    id="btn-start-download" 
+                    onclick="startDownload()" 
+                    class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-xl shadow-purple-500/25 transition flex items-center justify-center gap-2"
+                >
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span id="download-btn-label">Download Video (720p HD)</span>
+                </button>
+
+                <!-- 3 Power Action Buttons (Preview, QR to Phone, Share) -->
+                <div class="grid grid-cols-3 gap-2 pt-1 text-xs font-semibold">
+                    <button type="button" onclick="openPreviewModal()" class="py-2.5 px-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 flex items-center justify-center gap-1.5 transition">
+                        <i data-lucide="play-circle" class="w-3.5 h-3.5 text-purple-600"></i>
+                        <span>Preview</span>
+                    </button>
+                    <button type="button" onclick="openQrModal()" class="py-2.5 px-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 flex items-center justify-center gap-1.5 transition">
+                        <i data-lucide="smartphone" class="w-3.5 h-3.5 text-indigo-600"></i>
+                        <span>To Phone</span>
+                    </button>
+                    <button type="button" onclick="shareVideoLink()" class="py-2.5 px-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 flex items-center justify-center gap-1.5 transition">
+                        <i data-lucide="share-2" class="w-3.5 h-3.5 text-pink-600"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+
+                <!-- Dedicated Thumbnail Download Section -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-amber-500/15 dark:from-amber-950/30 dark:via-orange-950/20 dark:to-amber-950/30 border-2 border-amber-400/40 dark:border-amber-700/50 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3.5">
+                    <div class="flex items-center gap-3 w-full sm:w-auto">
+                        <div class="w-11 h-11 rounded-2xl bg-amber-500 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-amber-500/30">
+                            <i data-lucide="image" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-extrabold text-sm text-gray-900 dark:text-white">HD Video Thumbnail</h4>
+                                <span class="px-2 py-0.5 rounded-full bg-amber-500 text-white text-[9px] font-black uppercase tracking-wider">1080p Original</span>
+                            </div>
+                            <p class="text-[11px] text-gray-600 dark:text-gray-400 mt-0.5">Download full quality cover image without watermarks</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto">
+                        <button type="button" onclick="downloadThumbnail('hd')" class="flex-1 sm:flex-none py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-black shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition transform active:scale-95">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            <span>Save HD Image (JPG)</span>
+                        </button>
+                        <button type="button" onclick="downloadThumbnail('standard')" class="flex-1 sm:flex-none py-2.5 px-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 text-gray-700 dark:text-gray-200 text-xs font-bold flex items-center justify-center gap-1 transition">
+                            <span>Standard</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Progress Box -->
+                <div id="progress-box" class="hidden pt-2 space-y-2">
+                    <div class="flex items-center justify-between text-xs">
+                        <span id="progress-status-text" class="text-gray-600 dark:text-gray-300 font-medium">Downloading...</span>
+                        <span id="progress-percent" class="font-bold text-purple-600">0%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                        <div id="progress-bar-fill" class="h-full bg-gradient-to-r from-purple-600 to-pink-500 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Result Card -->
+            <div id="gallery-card" class="hidden mt-6 pt-5 border-t border-gray-100 dark:border-gray-800 space-y-4">
+                <div class="flex items-center justify-between">
+                    <span id="gallery-title" class="text-xs font-bold text-gray-700 dark:text-gray-300">Extracted Photos</span>
+                    <button onclick="downloadGalleryZip()" class="px-3 py-1.5 rounded-lg bg-purple-600 text-white text-xs font-bold flex items-center gap-1">
+                        <i data-lucide="archive" class="w-3.5 h-3.5"></i>
+                        <span>Download ZIP</span>
+                    </button>
+                </div>
+                <div id="gallery-grid" class="grid grid-cols-3 sm:grid-cols-4 gap-2 max-h-60 overflow-y-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TOP LEADERBOARD AD PLACEMENT (High RPM) -->
+    <!-- ======================================================== -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
+        <div class="ad-slot-box rounded-2xl p-4 text-center">
+            <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-1">Sponsored Advertisement</span>
+            <div class="py-2 text-xs font-semibold text-gray-700 dark:text-gray-300 flex items-center justify-center gap-3">
+                <i data-lucide="badge-percent" class="w-4 h-4 text-purple-600"></i>
+                <span>Fastest 4K Video Downloader • No Daily Limits • 100% Free Forever</span>
+            </div>
+            <!-- Google AdSense Slot Ready: <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-..." data-ad-slot="..."></ins> -->
+        </div>
+    </div>
+
+    <!-- Supported Platforms Grid (Icons Row) -->
+    <section id="supported" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-gray-200/60 dark:border-gray-800/60">
+        <div class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-3 sm:gap-4 text-center">
+            
+            <!-- 1. YouTube -->
+            <div onclick="selectPlatformPreset('youtube')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-red-500/10 hover:bg-red-500/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">YouTube</span>
+            </div>
+
+            <!-- 2. Instagram -->
+            <div onclick="selectPlatformPreset('instagram')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-pink-500/10 hover:bg-pink-500/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><defs><radialGradient id="ig-grid-grad" r="150%" cx="30%" cy="107%"><stop offset="0" stop-color="#fdf497"/><stop offset="0.05" stop-color="#fdf497"/><stop offset="0.45" stop-color="#fd5949"/><stop offset="0.6" stop-color="#d6249f"/><stop offset="0.9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-grid-grad)"/><path d="M12 7.02c-2.748 0-4.98 2.232-4.98 4.98s2.232 4.98 4.98 4.98 4.98-2.232 4.98-4.98-2.232-4.98-4.98-4.98zm0 8.21a3.23 3.23 0 1 1 0-6.46 3.23 3.23 0 0 1 0 6.46zm6.34-8.39a1.16 1.16 0 1 1-2.32 0 1.16 1.16 0 0 1 2.32 0zm2.66 3.17c-.06-1.28-.35-2.42-1.28-3.35-.93-.93-2.07-1.22-3.35-1.28-1.32-.08-5.28-.08-6.6 0-1.28.06-2.42.35-3.35 1.28-.93.93-1.22 2.07-1.28 3.35-.08 1.32-.08 5.28 0 6.6.06 1.28.35 2.42 1.28 3.35.93.93 2.07 1.22 3.35 1.28 1.32.08 5.28.08 6.6 0 1.28-.06 2.42-.35 3.35-1.28.93-.93 1.22-2.07 1.28-3.35.08-1.32.08-5.28 0-6.6zm-1.8 8.16c-.28.7-.82 1.24-1.52 1.52-1.05.42-3.55.32-4.68.32s-3.63.1-4.68-.32c-.7-.28-1.24-.82-1.52-1.52-.42-1.05-.32-3.55-.32-4.68s-.1-3.63.32-4.68c.28-.7.82-1.24 1.52-1.52 1.05-.42 3.55-.32 4.68-.32s3.63-.1 4.68.32c.7.28 1.24.82 1.52 1.52.42 1.05.32 3.55.32 4.68s.1 3.63-.32 4.68z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Instagram</span>
+            </div>
+
+            <!-- 3. Facebook -->
+            <div onclick="selectPlatformPreset('facebook')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-blue-600/10 hover:bg-blue-600/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M15.117 12.046l.374-2.438h-2.339V8.026c0-.668.327-1.319 1.376-1.319h1.065V4.631a13.003 13.003 0 0 0-1.89-.165c-1.928 0-3.187 1.168-3.187 3.28v1.862H8.384v2.438h2.132v5.894a12.06 12.06 0 0 0 3.734 0v-5.894h2.001z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Facebook</span>
+            </div>
+
+            <!-- 4. TikTok -->
+            <div onclick="selectPlatformPreset('tiktok')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-gray-900/10 dark:bg-white/10 hover:bg-black/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#000000"/><path d="M16.6 8.2c-.8-.5-1.4-1.3-1.6-2.2h-2.4v10.2c0 1.3-1 2.4-2.4 2.4-1.3 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4.2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.7 0-4.9 2.2-4.9 4.9 0 2.7 2.2 4.9 4.9 4.9 2.7 0 4.9-2.2 4.9-4.9V9.5c1 .7 2.2 1.1 3.4 1.1V8.2c-.8 0-1.4 0-1.9-.0z" fill="#25F4EE"/><path d="M17.1 8.2c-.8-.5-1.4-1.3-1.6-2.2h-2.4v10.2c0 1.3-1 2.4-2.4 2.4-1.3 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4.2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.7 0-4.9 2.2-4.9 4.9 0 2.7 2.2 4.9 4.9 4.9 2.7 0 4.9-2.2 4.9-4.9V9.5c1 .7 2.2 1.1 3.4 1.1V8.2c-.8 0-1.4 0-1.9-.0z" fill="#FE2C55" style="mix-blend-mode: lighten"/><path d="M16.8 8.2c-.8-.5-1.4-1.3-1.6-2.2h-2.4v10.2c0 1.3-1 2.4-2.4 2.4-1.3 0-2.4-1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4.2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.7 0-4.9 2.2-4.9 4.9 0 2.7 2.2 4.9 4.9 4.9 2.7 0 4.9-2.2 4.9-4.9V9.5c1 .7 2.2 1.1 3.4 1.1V8.2c-.8 0-1.4 0-1.9-.0z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">TikTok</span>
+            </div>
+
+            <!-- 5. Twitter (X) -->
+            <div onclick="selectPlatformPreset('twitter')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-gray-900/10 dark:bg-white/10 hover:bg-black/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#000000"/><path d="M18.244 4.25h2.825l-6.173 7.056 7.262 9.444h-5.685l-4.453-5.823-5.1 5.823h-2.83l6.602-7.546L3.625 4.25h5.83l4.025 5.321 4.764-5.321zm-1.001 14.809h1.565L7.915 5.867H6.236l10.998 13.192z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Twitter (X)</span>
+            </div>
+
+            <!-- 6. Snapchat -->
+            <div onclick="selectPlatformPreset('snapchat')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-yellow-400/20 hover:bg-yellow-400/30 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FFFC00"/><path d="M12.003 4.25c-2.613 0-4.482 1.844-4.57 4.237-.024.636.143 1.637.288 2.083.05.153-.024.288-.173.342-.486.178-1.066.452-1.284 1.056-.168.468.143.864.717.962.247.042.446.06.495.234.09.308-.415.863-.881 1.298-.445.416-.544.757-.367 1.045.247.405 1.05.405 1.772.378.366-.013.673.185.832.493.307.595.93 1.122 2.376 1.122.386 0 .782-.04 1.198-.12.416.08.812.12 1.198.12 1.445 0 2.069-.527 2.376-1.122.158-.308.465-.506.832-.493.722.027 1.525.027 1.772-.378.178-.288.079-.63-.367-1.045-.465-.435-.97-1-.88-1.298.05-.174.247-.192.495-.234.574-.098.885-.494.717-.962-.218-.604-.798-.878-1.284-1.056-.149-.054-.223-.19-.173-.342.143-.446.312-1.447.288-2.083-.089-2.393-1.957-4.237-4.57-4.237z" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" stroke-linejoin="round"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Snapchat</span>
+            </div>
+
+            <!-- 7. Pinterest -->
+            <div onclick="selectPlatformPreset('pinterest')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-red-600/10 hover:bg-red-600/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#E60023"/><path d="M12.017 4C7.59 4 4 7.59 4 12.017c0 3.393 2.109 6.297 5.105 7.458-.071-.634-.135-1.608.028-2.301.147-.626.953-4.041.953-4.041s-.243-.487-.243-1.207c0-1.131.656-1.976 1.472-1.976.694 0 1.029.521 1.029 1.147 0 .698-.445 1.743-.675 2.711-.192.812.408 1.474 1.208 1.474 1.45 0 2.564-1.53 2.564-3.738 0-1.954-1.405-3.32-3.41-3.32-2.489 0-3.95 1.867-3.95 3.793 0 .752.289 1.558.65 1.996.071.087.081.163.06.252-.066.276-.214.872-.243.993-.038.163-.128.198-.295.12-1.101-.512-1.789-2.12-1.789-3.411 0-2.776 2.018-5.326 5.816-5.326 3.053 0 5.426 2.176 5.426 5.084 0 3.033-1.912 5.476-4.567 5.476-.892 0-1.731-.464-2.018-1.01l-.55 2.096c-.199.767-.738 1.728-1.1 2.318A11.968 11.968 0 0 0 12.017 20c4.427 0 8.017-3.59 8.017-8.017C20.034 7.59 16.444 4 12.017 4z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Pinterest</span>
+            </div>
+
+            <!-- 8. LinkedIn -->
+            <div onclick="selectPlatformPreset('linkedin')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-blue-700/10 hover:bg-blue-700/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path d="M7.12 18.5H4.25V9.25h2.87v9.25zM5.685 8.03c-.92 0-1.665-.75-1.665-1.67a1.67 1.67 0 1 1 3.33 0c0 .92-.745 1.67-1.665 1.67zM19.75 18.5h-2.87v-4.5c0-1.07-.02-2.45-1.49-2.45-1.5 0-1.73 1.17-1.73 2.37v4.58h-2.87V9.25h2.75v1.26h.04c.38-.73 1.32-1.5 2.71-1.5 2.9 0 3.44 1.91 3.44 4.4v5.09z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">LinkedIn</span>
+            </div>
+
+            <!-- 9. Vimeo -->
+            <div onclick="selectPlatformPreset('vimeo')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-sky-500/10 hover:bg-sky-500/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#1AB7EA"/><path d="M19.45 8.94c-.08 1.84-1.39 4.36-3.92 7.57-2.6 3.32-4.8 4.98-6.6 4.98-1.12 0-2.06-1.03-2.84-3.1-.52-1.92-1.05-3.84-1.58-5.76-.58-2.12-1.2-3.18-1.87-3.18-.15 0-.67.31-1.55.93L0 9.17c1.04-.91 2.06-1.82 3.07-2.73 1.38-1.2 2.4-1.83 3.07-1.89 1.58-.15 2.56.93 2.92 3.23.44 2.74.75 4.44.93 5.1.53 2.27 1.12 3.41 1.77 3.41.51 0 1.25-.8 2.22-2.41.97-1.61 1.5-2.8 1.6-3.57.17-1.24-.34-1.86-1.54-1.86-.56 0-1.14.13-1.73.38 1.16-3.8 3.37-5.63 6.64-5.48 2.42.1 3.56 1.63 3.42 4.59z" transform="scale(0.8) translate(2.5, 2.5)" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Vimeo</span>
+            </div>
+
+            <!-- 10. Dailymotion -->
+            <div onclick="selectPlatformPreset('dailymotion')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-blue-600/10 hover:bg-blue-600/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0066DC"/><path d="M13.2 4.5h2.9v14.9h-2.8v-2.1c-.8 1.5-2.2 2.3-3.9 2.3-3.3 0-5.4-2.6-5.4-6.3 0-3.8 2.2-6.5 5.4-6.5 1.7 0 3.1.8 3.9 2.3V4.5zm-3.5 7.1c-1.8 0-3 1.4-3 3.8s1.2 3.8 3 3.8 3-1.4 3-3.8-1.2-3.8-3-3.8z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Dailymotion</span>
+            </div>
+
+            <!-- 11. Reddit -->
+            <div onclick="selectPlatformPreset('reddit')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF4500"/><path d="M12 6.5a1.2 1.2 0 0 0-1.2 1.2c0 .1.02.2.05.3l-2.02.95a5.5 5.5 0 0 0-3.33-1.1c-2.48 0-4.5 1.57-4.5 3.5 0 1.13.69 2.14 1.76 2.76-.05.24-.08.49-.08.74 0 2.76 3.69 5 8.24 5s8.24-2.24 8.24-5c0-.25-.03-.5-.08-.74 1.07-.62 1.76-1.63 1.76-2.76 0-1.93-2.02-3.5-4.5-3.5-.83 0-1.61.18-2.3.5l-1.83-.86.6-1.64 1.5.34a1.2 1.2 0 1 0 .23-.74l-2.08-.47-.85 2.32c-.08-.02-.17-.03-.25-.03zm-3.3 5.4c.66 0 1.2.54 1.2 1.2s-.54 1.2-1.2 1.2-1.2-.54-1.2-1.2.54-1.2 1.2-1.2zm6.6 0c.66 0 1.2.54 1.2 1.2s-.54 1.2-1.2 1.2-1.2-.54-1.2-1.2.54-1.2 1.2-1.2zm-5.7 4.1c.7.46 1.5.7 2.4.7s1.7-.24 2.4-.7c.18-.12.43-.07.55.11.12.18.07.43-.11.55-.84.55-1.8.84-2.84.84s-2-.29-2.84-.84a.4.4 0 0 1-.11-.55c.12-.18.37-.23.55-.11z" transform="scale(0.8) translate(2.5, 2.5)" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-gray-700 dark:text-gray-300">Reddit</span>
+            </div>
+
+            <!-- 12. 1000+ Sites -->
+            <div onclick="openModal('supported-modal')" class="flex flex-col items-center gap-1.5 group cursor-pointer">
+                <div class="w-11 h-11 rounded-2xl bg-purple-500/10 hover:bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24"><defs><linearGradient id="multi-brand-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="50%" stop-color="#ec4899"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#multi-brand-grad)"/><circle cx="7" cy="7" r="1.8" fill="#FFFFFF"/><circle cx="17" cy="7" r="1.8" fill="#FFFFFF"/><circle cx="7" cy="17" r="1.8" fill="#FFFFFF"/><circle cx="17" cy="17" r="1.8" fill="#FFFFFF"/><path d="M12 9.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" fill="#FFFFFF"/></svg>
+                </div>
+                <span class="text-[11px] font-semibold text-purple-600 dark:text-purple-400">1000+ Sites</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4 Core Value Props Cards -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm flex items-start gap-3.5 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-gray-900 dark:text-white">Blazing Fast</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">Download videos in seconds with high-speed servers.</p>
+                </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm flex items-start gap-3.5 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-gray-900 dark:text-white">100% Free</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">No hidden charges. Unlimited downloads.</p>
+                </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm flex items-start gap-3.5 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="infinity" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-gray-900 dark:text-white">No Login Needed</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">Just paste the link and download instantly.</p>
+                </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm flex items-start gap-3.5 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-xl bg-pink-50 dark:bg-pink-950/60 text-pink-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="lock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-gray-900 dark:text-white">No Watermark</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">Get clean, high quality videos without watermark.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- "All Video Tools" (6 Clickable Tool Cards) -->
+    <section id="tools" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="text-center space-y-2 mb-10">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-950 dark:text-white">
+                All Video <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Tools</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                More than just a video downloader. Everything you need in one place.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+            
+            <!-- Tool 1: Video Downloader -->
+            <div onclick="activateTool('video')" class="p-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-purple-300 transition flex flex-col justify-between cursor-pointer group">
+                <div>
+                    <div class="w-9 h-9 rounded-xl bg-red-50 dark:bg-red-950/60 text-red-500 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                        <i data-lucide="play-square" class="w-4 h-4"></i>
+                    </div>
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white leading-tight">Video Downloader</h4>
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">Download any video from 1000+ sites</p>
+                </div>
+                <div class="pt-3 flex justify-end">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition"></i>
+                </div>
+            </div>
+
+            <!-- Tool 2: Reels & Shorts -->
+            <div onclick="activateTool('reels')" class="p-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-purple-300 transition flex flex-col justify-between cursor-pointer group">
+                <div>
+                    <div class="w-9 h-9 rounded-xl bg-pink-50 dark:bg-pink-950/60 text-pink-500 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                        <i data-lucide="clapperboard" class="w-4 h-4"></i>
+                    </div>
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white leading-tight">Reels & Shorts</h4>
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">Download Instagram Reels, YouTube Shorts</p>
+                </div>
+                <div class="pt-3 flex justify-end">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition"></i>
+                </div>
+            </div>
+
+            <!-- Tool 3: Stories Downloader -->
+            <div onclick="activateTool('stories')" class="p-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-purple-300 transition flex flex-col justify-between cursor-pointer group">
+                <div>
+                    <div class="w-9 h-9 rounded-xl bg-orange-50 dark:bg-orange-950/60 text-orange-500 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                        <i data-lucide="loader" class="w-4 h-4"></i>
+                    </div>
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white leading-tight">Stories Downloader</h4>
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">Save stories from Instagram, Facebook</p>
+                </div>
+                <div class="pt-3 flex justify-end">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition"></i>
+                </div>
+            </div>
+
+            <!-- Tool 4: MP3 Converter -->
+            <div onclick="activateTool('mp3')" class="p-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-purple-300 transition flex flex-col justify-between cursor-pointer group">
+                <div>
+                    <div class="w-9 h-9 rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-500 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                        <i data-lucide="music" class="w-4 h-4"></i>
+                    </div>
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white leading-tight">MP3 Converter</h4>
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">Convert videos to MP3 (Audio)</p>
+                </div>
+                <div class="pt-3 flex justify-end">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition"></i>
+                </div>
+            </div>
+
+            <!-- Tool 5: Playlist Downloader -->
+            <div onclick="activateTool('playlist')" class="p-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-purple-300 transition flex flex-col justify-between cursor-pointer group">
+                <div>
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-500 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                        <i data-lucide="list-video" class="w-4 h-4"></i>
+                    </div>
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white leading-tight">Playlist Downloader</h4>
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">Download entire playlists & channels</p>
+                </div>
+                <div class="pt-3 flex justify-end">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition"></i>
+                </div>
+            </div>
+
+            <!-- Tool 6: Thumbnail Downloader -->
+            <div onclick="activateTool('thumbnail')" class="p-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-purple-300 transition flex flex-col justify-between cursor-pointer group">
+                <div>
+                    <div class="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-500 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                        <i data-lucide="image" class="w-4 h-4"></i>
+                    </div>
+                    <h4 class="font-bold text-xs text-gray-900 dark:text-white leading-tight">Thumbnail Downloader</h4>
+                    <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">Get HD thumbnails in one click</p>
+                </div>
+                <div class="pt-3 flex justify-end">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-0.5 transition"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dark Showcase Banner -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="rounded-3xl bg-gradient-to-r from-[#0d111e] via-[#111728] to-[#0c0f1c] text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 border border-gray-800">
+            <div class="max-w-md space-y-3 z-10 text-center lg:text-left">
+                <span class="text-[10px] uppercase font-extrabold tracking-widest text-pink-500 block">HIGH QUALITY DOWNLOADS</span>
+                <h3 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+                    Get Videos in HD, 4K <br class="hidden sm:inline">
+                    and Even 8K <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Quality</span>
+                </h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Enjoy crystal clear downloads with multiple quality options. Perfect for any device — mobile, tablet or desktop.
+                </p>
+            </div>
+
+            <div class="relative flex items-center justify-center z-10 w-full lg:w-auto max-w-full overflow-hidden py-2">
+                <div class="flex items-center -space-x-10 sm:-space-x-16 max-w-full">
+                    <div class="w-24 sm:w-28 h-16 sm:h-20 rounded-xl overflow-hidden shadow-lg border border-gray-700/60 opacity-60 transform scale-90">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400" class="w-full h-full object-cover">
+                        <span class="absolute bottom-1 right-1 text-[8px] font-bold bg-black/80 px-1 rounded">480p</span>
+                    </div>
+                    <div class="w-28 sm:w-32 h-20 sm:h-24 rounded-xl overflow-hidden shadow-xl border border-gray-700/70 opacity-75 transform scale-95">
+                        <img src="https://images.unsplash.com/photo-1511497584788-87676104235f?w=400" class="w-full h-full object-cover">
+                        <span class="absolute bottom-1.5 right-1.5 text-[9px] font-bold bg-black/80 px-1 rounded">720p</span>
+                    </div>
+                    <div class="w-32 sm:w-36 h-22 sm:h-28 rounded-xl overflow-hidden shadow-2xl border border-gray-700/80 opacity-90 transform scale-100">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400" class="w-full h-full object-cover">
+                        <span class="absolute bottom-2 right-2 text-[10px] font-bold bg-black/80 px-1 rounded">1080p</span>
+                    </div>
+                    <div class="relative w-44 sm:w-56 h-28 sm:h-36 rounded-2xl overflow-hidden shadow-2xl border-2 border-purple-500/50 transform scale-105 z-20">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" class="w-full h-full object-cover">
+                        <span class="absolute top-2 right-2 text-[10px] font-black bg-purple-600 text-white px-2 py-0.5 rounded shadow">8K</span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-4 h-4 fill-purple-600 text-purple-600 ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 left-2 text-[10px] font-black bg-black/80 px-2 py-0.5 rounded">4K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Stats -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                </div>
+                <div class="text-left">
+                    <div class="text-xl font-black text-gray-900 dark:text-white">10M+</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">Happy Users</div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="cloud-download" class="w-5 h-5"></i>
+                </div>
+                <div class="text-left">
+                    <div class="text-xl font-black text-gray-900 dark:text-white">1B+</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">Videos Downloaded</div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </div>
+                <div class="text-left">
+                    <div class="text-xl font-black text-gray-900 dark:text-white">1000+</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">Supported Websites</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEO Keyword Rich Content Section (Google Ranking & Crawling) -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-gray-200/60 dark:border-gray-800/60 space-y-12">
+        
+        <!-- How To Download Steps -->
+        <div class="text-center space-y-3">
+            <h2 class="text-2xl sm:text-3xl font-black text-gray-950 dark:text-white tracking-tight">
+                How to Download Videos Online with <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">VidZora</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-500 max-w-xl mx-auto">
+                Download high-quality MP4 videos and MP3 audio in three simple steps without installing any software or app.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm space-y-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 font-black text-sm flex items-center justify-center">1</div>
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white">Copy Media Link</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Open YouTube, Instagram Reels, TikTok, or Twitter. Copy the share URL of the video, short, or song you want to save.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm space-y-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 font-black text-sm flex items-center justify-center">2</div>
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white">Paste into VidZora</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Tap the <b>Paste</b> button to instantly paste your copied link. Choose your desired resolution: 4K, 1080p, 720p HD, or MP3 Audio.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200/80 dark:border-gray-800 shadow-sm space-y-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-pink-50 dark:bg-pink-950/60 text-pink-600 font-black text-sm flex items-center justify-center">3</div>
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white">Instant Direct Download</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Click <b>Download</b>. The video streams directly into your browser or mobile phone with zero server lag and zero watermarks.
+                </p>
+            </div>
+        </div>
+
+        <!-- Keyword Ranking Content & Platform Feature Matrix -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-600 dark:text-gray-400">
+            <div class="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800 space-y-2.5">
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white flex items-center gap-2">
+                    <span class="text-red-500">▶</span> YouTube Video Downloader & Shorts Saver
+                </h3>
+                <p class="leading-relaxed">
+                    VidZora allows you to download YouTube videos in 1080p Full HD, 1440p 2K, and 2160p 4K with crystal clear sound. Supports YouTube Shorts, music videos, playlists, podcasts, and conversions to high-bitrate 320kbps MP3 audio files.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800 space-y-2.5">
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white flex items-center gap-2">
+                    <span class="text-pink-500">📸</span> Instagram Reels & Story Downloader
+                </h3>
+                <p class="leading-relaxed">
+                    Save Instagram Reels, IGTV, posts, carousel photo albums, and user stories directly in original MP4 quality. No login or password required. Works seamlessly on both Android and iPhone Safari.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800 space-y-2.5">
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white flex items-center gap-2">
+                    <span class="text-cyan-400">🎵</span> TikTok Video Downloader (No Watermark)
+                </h3>
+                <p class="leading-relaxed">
+                    Get clean TikTok videos with the creator watermark completely removed. Extract original background audio tracks as MP3s or download HD videos without any quality compression or blur.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800 space-y-2.5">
+                <h3 class="font-bold text-sm text-gray-900 dark:text-white flex items-center gap-2">
+                    <span class="text-blue-500">⚡</span> Facebook, Twitter (𝕏) & Pinterest Video Saver
+                </h3>
+                <p class="leading-relaxed">
+                    Download Facebook public videos, FB reels, Twitter / X video clips, Pinterest inspiration clips, Reddit videos with synchronized audio tracks, and Vimeo content with fast on-the-fly streaming.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- AD PLACEMENT 1: Responsive In-Feed Banner -->
+    <!-- ======================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+        <div class="ad-slot-box rounded-3xl p-6 text-center shadow-sm">
+            <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-2">Sponsored Advertisement</span>
+            <div class="py-4 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 text-left">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-purple-500/20">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm sm:text-base text-gray-900 dark:text-white">Experience 10x Faster Unlimited Downloads with VidZora PWA</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Save videos directly to your camera roll without ads or quality loss.</p>
+                    </div>
+                </div>
+                <button onclick="triggerPwaInstall()" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-extrabold text-xs shadow-lg shadow-purple-600/30 flex items-center gap-2 transition flex-shrink-0">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Get Free App</span>
+                </button>
+            </div>
+            <!-- Google AdSense Slot Ready: <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-..." data-ad-slot="..." data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- DEVELOPER API PRICING SECTION (COMING SOON) -->
+    <!-- ======================================================== -->
+    <section id="api-pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-pink-500/10 border border-purple-500/20 text-purple-700 dark:text-purple-300 font-extrabold text-xs uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-purple-600 animate-ping"></span>
+                <span>⚡ VidZora REST API • Coming Soon</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-gray-950 dark:text-white">
+                Build Your Own Downloader Apps & Bots
+            </h2>
+            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                Connect our high-speed media extraction API to your Telegram bots, Android apps, and websites. 1000+ platforms supported with 99.9% uptime and zero server maintenance required.
+            </p>
+            <div class="inline-block px-4 py-1.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-bold">
+                🎁 Pre-register now to lock in <b>50% Lifetime Discount</b> when the API launches!
+            </div>
+        </div>
+
+        <!-- 3 Affordable & Profitable Pricing Tiers -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Tier 1: Starter -->
+            <div class="rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-7 sm:p-8 flex flex-col justify-between shadow-xl relative hover:border-purple-500 transition duration-300">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase tracking-wider text-gray-500 dark:text-gray-400">Starter / Hobby</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-[10px] font-bold text-gray-600 dark:text-gray-300">Early Access</span>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-gray-950 dark:text-white">₹249</span>
+                            <span class="text-xs text-gray-500 font-semibold">/ month ($2.99)</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Ideal for Telegram bots & personal automation scripts.</p>
+                    </div>
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-5 space-y-3 text-xs font-medium text-gray-700 dark:text-gray-300">
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span><b>2,500</b> Requests / month</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>YouTube 720p, Reels, TikTok (No-WM)</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>320kbps MP3 Audio Conversion</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>15 Requests / minute Rate Limit</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Community Support & API Docs</span></div>
+                    </div>
+                </div>
+                <button onclick="joinApiWaitlist('Starter')" class="mt-8 w-full py-3.5 px-4 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-extrabold text-xs transition flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Pre-Order Starter Plan</span>
+                </button>
+            </div>
+
+            <!-- Tier 2: Pro Developer (Most Popular) -->
+            <div class="rounded-3xl bg-gradient-to-b from-purple-500/10 via-white to-white dark:from-purple-950/40 dark:via-gray-900 dark:to-gray-900 border-2 border-purple-500 p-7 sm:p-8 flex flex-col justify-between shadow-2xl relative transform md:-translate-y-2">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-black text-[10px] uppercase tracking-wider shadow-md">
+                    🔥 Most Popular
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase tracking-wider text-purple-600 dark:text-purple-400">Pro Developer</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/60 text-[10px] font-bold text-purple-700 dark:text-purple-300">Save 50%</span>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-gray-950 dark:text-white">₹799</span>
+                            <span class="text-xs text-gray-500 font-semibold">/ month ($9.49)</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Perfect for commercial Android apps & active websites.</p>
+                    </div>
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-5 space-y-3 text-xs font-medium text-gray-700 dark:text-gray-300">
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i><span><b>15,000</b> Requests / month</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i><span><b>1080p Full HD</b> & 4K Video Streams</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i><span>Bulk Video Extraction API</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i><span>On-The-Fly Audio Trimming Engine</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i><span>60 Requests / minute Speed</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i><span>Priority Email & WhatsApp Support</span></div>
+                    </div>
+                </div>
+                <button onclick="joinApiWaitlist('Pro Developer')" class="mt-8 w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-xs shadow-xl shadow-purple-500/30 transition flex items-center justify-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Lock in VIP Early Access</span>
+                </button>
+            </div>
+
+            <!-- Tier 3: Agency & Scale -->
+            <div class="rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-7 sm:p-8 flex flex-col justify-between shadow-xl relative hover:border-indigo-500 transition duration-300">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black uppercase tracking-wider text-gray-500 dark:text-gray-400">Agency & Scale</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-[10px] font-bold text-indigo-600 dark:text-indigo-400">High Volume</span>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-gray-950 dark:text-white">₹1,999</span>
+                            <span class="text-xs text-gray-500 font-semibold">/ month ($23.99)</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">For high-traffic platforms, SaaS tools & multi-app networks.</p>
+                    </div>
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-5 space-y-3 text-xs font-medium text-gray-700 dark:text-gray-300">
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span><b>60,000</b> Requests / month</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Dedicated Ultra-Fast Stream Server</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Custom Domain Whitelabeling</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>99.99% Guaranteed Uptime SLA</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>24/7 Dedicated Technical Support</span></div>
+                    </div>
+                </div>
+                <button onclick="joinApiWaitlist('Enterprise')" class="mt-8 w-full py-3.5 px-4 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-extrabold text-xs transition flex items-center justify-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    <span>Contact for Enterprise Waitlist</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- AD PLACEMENT 2: Responsive Mid-Article Banner -->
+    <!-- ======================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
+        <div class="ad-slot-box rounded-3xl p-6 text-center shadow-sm">
+            <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-2">Sponsored Content</span>
+            <div class="max-w-2xl mx-auto py-2">
+                <h4 class="font-extrabold text-sm sm:text-base text-gray-900 dark:text-white">Convert Any Online Video to Studio-Master 320kbps MP3 Audio</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Clean ID3 tags, album art included, 100% free with unlimited conversion.</p>
+            </div>
+            <!-- Google AdSense Slot Ready: <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-..." data-ad-slot="..." data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- EXTENSIVE STEP-BY-STEP PLATFORM DOWNLOAD GUIDES (SEO & LENGTH) -->
+    <!-- ======================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-950 dark:text-white">
+                How to Download Videos from Any Website
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2">
+                Follow these simple steps to save videos, reels, stories, and songs to your phone or computer.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Guide 1: YouTube -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 space-y-3 shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-2xl bg-red-500/10 text-red-500 flex items-center justify-center font-bold">
+                    <i data-lucide="video" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-base text-gray-950 dark:text-white">YouTube 4K & Shorts Downloader</h3>
+                <ol class="space-y-2 text-xs text-gray-600 dark:text-gray-400 list-decimal list-inside leading-relaxed">
+                    <li>Open the YouTube app or website and copy the video URL.</li>
+                    <li>Paste the link into the VidZora search box above.</li>
+                    <li>Choose your preferred resolution (1080p, 720p, or 320kbps MP3).</li>
+                    <li>Click <b>Download Video</b> to save it directly to your device.</li>
+                </ol>
+            </div>
+
+            <!-- Guide 2: Instagram Reels -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 space-y-3 shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-2xl bg-pink-500/10 text-pink-500 flex items-center justify-center font-bold">
+                    <i data-lucide="camera" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-base text-gray-950 dark:text-white">Instagram Reels & Story Saver</h3>
+                <ol class="space-y-2 text-xs text-gray-600 dark:text-gray-400 list-decimal list-inside leading-relaxed">
+                    <li>On Instagram, tap the three dots or share button on any Reel or Post.</li>
+                    <li>Tap <b>Copy Link</b> to grab the URL.</li>
+                    <li>Paste the link into VidZora and press Search.</li>
+                    <li>Save the high-definition reel with original audio intact.</li>
+                </ol>
+            </div>
+
+            <!-- Guide 3: TikTok -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 space-y-3 shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-bold">
+                    <i data-lucide="music" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-base text-gray-950 dark:text-white">TikTok Downloader (No Watermark)</h3>
+                <ol class="space-y-2 text-xs text-gray-600 dark:text-gray-400 list-decimal list-inside leading-relaxed">
+                    <li>Tap the <b>Share</b> arrow on any TikTok video.</li>
+                    <li>Select <b>Copy Link</b> from the sharing menu.</li>
+                    <li>Paste the link into VidZora.</li>
+                    <li>VidZora strips the watermark and delivers crisp, clean HD MP4 files.</li>
+                </ol>
+            </div>
+
+            <!-- Guide 4: Facebook -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 space-y-3 shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold">
+                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-base text-gray-950 dark:text-white">Facebook Video & Reels Saver</h3>
+                <ol class="space-y-2 text-xs text-gray-600 dark:text-gray-400 list-decimal list-inside leading-relaxed">
+                    <li>Click Share on any Facebook public video or reel.</li>
+                    <li>Copy the video URL to your clipboard.</li>
+                    <li>Paste into VidZora and choose 720p or 1080p Full HD.</li>
+                    <li>Download instantly without logging into Facebook.</li>
+                </ol>
+            </div>
+
+            <!-- Guide 5: Twitter / X -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 space-y-3 shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-2xl bg-gray-500/10 text-gray-700 dark:text-gray-300 flex items-center justify-center font-bold">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-base text-gray-950 dark:text-white">Twitter / 𝕏 Video Downloader</h3>
+                <ol class="space-y-2 text-xs text-gray-600 dark:text-gray-400 list-decimal list-inside leading-relaxed">
+                    <li>Click the Share icon under any tweet with a video.</li>
+                    <li>Select <b>Copy link to Tweet</b>.</li>
+                    <li>Enter the link on VidZora.</li>
+                    <li>Download the highest bitrate MP4 available on Twitter servers.</li>
+                </ol>
+            </div>
+
+            <!-- Guide 6: Pinterest & Reddit -->
+            <div class="p-6 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 space-y-3 shadow-sm hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-base text-gray-950 dark:text-white">Pinterest & Reddit Downloader</h3>
+                <ol class="space-y-2 text-xs text-gray-600 dark:text-gray-400 list-decimal list-inside leading-relaxed">
+                    <li>Copy the link of any Pinterest Pin or Reddit post.</li>
+                    <li>Paste into VidZora to extract audio and video together.</li>
+                    <li>Enjoy full synchronized audio on Reddit clips.</li>
+                    <li>Save original resolution Pinterest media with one tap.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- COMPARISON TABLE: VIDZORA VS COMPETITORS -->
+    <!-- ======================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <h2 class="text-2xl sm:text-3xl font-black text-gray-950 dark:text-white">
+                Why Millions Choose VidZora Over Other Tools
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                See how VidZora stacks up against common online downloaders like SaveFrom, Y2Mate, and SnapTik.
+            </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900">
+            <table class="w-full text-left text-xs text-gray-600 dark:text-gray-300">
+                <thead class="bg-gray-50 dark:bg-gray-800/60 text-gray-900 dark:text-white font-extrabold uppercase text-[10px] tracking-wider border-b border-gray-200 dark:border-gray-800">
+                    <tr>
+                        <th class="p-4 sm:p-5">Feature</th>
+                        <th class="p-4 sm:p-5 text-purple-600 dark:text-purple-400 font-black">VidZora Pro</th>
+                        <th class="p-4 sm:p-5">SaveFrom.net</th>
+                        <th class="p-4 sm:p-5">Y2Mate</th>
+                        <th class="p-4 sm:p-5">SnapTik</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-gray-800/60 font-medium">
+                    <tr>
+                        <td class="p-4 sm:p-5 font-bold text-gray-900 dark:text-white">Popup Ads & Spammy Redirects</td>
+                        <td class="p-4 sm:p-5 text-emerald-600 font-bold">❌ 0 Spam Popups</td>
+                        <td class="p-4 sm:p-5 text-red-500">⚠️ Aggressive Popups</td>
+                        <td class="p-4 sm:p-5 text-red-500">⚠️ Multiple Redirects</td>
+                        <td class="p-4 sm:p-5 text-red-500">⚠️ Notification Prompts</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-bold text-gray-900 dark:text-white">Direct In-Browser Streaming</td>
+                        <td class="p-4 sm:p-5 text-emerald-600 font-bold">✅ Yes (Instant)</td>
+                        <td class="p-4 sm:p-5 text-gray-400">Slow Redirect</td>
+                        <td class="p-4 sm:p-5 text-gray-400">Third-party server</td>
+                        <td class="p-4 sm:p-5 text-emerald-600">Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-bold text-gray-900 dark:text-white">Audio & Video Trimmer</td>
+                        <td class="p-4 sm:p-5 text-emerald-600 font-bold">✅ Built-In Free</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ No</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ No</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ No</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-bold text-gray-900 dark:text-white">PC to Mobile QR Code Transfer</td>
+                        <td class="p-4 sm:p-5 text-emerald-600 font-bold">✅ 1-Click QR Code</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ No</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ No</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ No</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-bold text-gray-900 dark:text-white">1000+ Platforms Supported</td>
+                        <td class="p-4 sm:p-5 text-emerald-600 font-bold">✅ Complete Engine</td>
+                        <td class="p-4 sm:p-5 text-gray-400">Limited to 10</td>
+                        <td class="p-4 sm:p-5 text-gray-400">YouTube only</td>
+                        <td class="p-4 sm:p-5 text-gray-400">TikTok only</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 sm:p-5 font-bold text-gray-900 dark:text-white">PWA Mobile App (Add to Home)</td>
+                        <td class="p-4 sm:p-5 text-emerald-600 font-bold">✅ Native PWA</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ Web only</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ Web only</td>
+                        <td class="p-4 sm:p-5 text-gray-400">❌ Requires APK</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- AD PLACEMENT 3: Responsive Pre-Footer Banner -->
+    <!-- ======================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+        <div class="ad-slot-box rounded-3xl p-6 text-center shadow-sm">
+            <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-2">Advertisement Placement</span>
+            <div class="py-3 max-w-xl mx-auto">
+                <span class="text-xs font-bold text-gray-700 dark:text-gray-300">Ready to build your next automation project?</span>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Get developer access to our streaming API with low-cost predictable monthly plans.</p>
+            </div>
+            <!-- Google AdSense Slot Ready: <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-..." data-ad-slot="..." data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+        </div>
+    </section>
+
+    <!-- Clean Footer -->
+    <footer class="border-t border-gray-200/80 dark:border-gray-800/80 py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white">
+                    <i data-lucide="play" class="w-4 h-4 fill-white text-white ml-0.5"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-black text-gray-900 dark:text-white">Vid<span class="text-purple-600">Zora</span></span>
+                    <span class="text-[10px] text-gray-400 block -mt-1 font-semibold">Fast. Free. Unlimited.</span>
+                </div>
+            </div>
+
+            <!-- Clickable Footer Modals -->
+            <div class="flex items-center gap-5 text-xs font-semibold text-gray-600 dark:text-gray-400 flex-wrap justify-center">
+                <a href="/" class="hover:text-purple-600 dark:hover:text-purple-400">Home</a>
+                <button onclick="openModal('privacy-modal')" class="hover:text-purple-600 dark:hover:text-purple-400">Privacy Policy</button>
+                <button onclick="openModal('terms-modal')" class="hover:text-purple-600 dark:hover:text-purple-400">Terms of Service</button>
+                <button onclick="openModal('supported-modal')" class="hover:text-purple-600 dark:hover:text-purple-400">Supported Sites</button>
+                <button onclick="openModal('blog-modal')" class="hover:text-purple-600 dark:hover:text-purple-400">Blog</button>
+                <button onclick="openModal('faq-modal')" class="hover:text-purple-600 dark:hover:text-purple-400">FAQ</button>
+            </div>
+
+            <div class="flex items-center gap-4 text-gray-500 dark:text-gray-400">
+                <i data-lucide="youtube" class="w-4 h-4 hover:text-red-500 cursor-pointer"></i>
+                <i data-lucide="instagram" class="w-4 h-4 hover:text-pink-500 cursor-pointer"></i>
+                <i data-lucide="twitter" class="w-4 h-4 hover:text-sky-400 cursor-pointer"></i>
+                <i data-lucide="facebook" class="w-4 h-4 hover:text-blue-600 cursor-pointer"></i>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- MODAL 1: Privacy Policy -->
+    <div id="privacy-modal" class="modal-layer fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-8 max-w-xl w-full max-h-[85vh] overflow-y-auto space-y-4 shadow-2xl relative">
+            <button onclick="closeModal('privacy-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2 text-purple-600 font-bold text-lg">
+                <i data-lucide="shield" class="w-6 h-6"></i>
+                <span>Privacy Policy</span>
+            </div>
+            <div class="text-xs text-gray-600 dark:text-gray-400 space-y-3 leading-relaxed">
+                <p>Welcome to <strong>VidZora</strong>. Your privacy is paramount to us.</p>
+                <h5 class="font-bold text-gray-900 dark:text-white text-sm">1. Zero Log & Telemetry Policy</h5>
+                <p>We do not store your download history, URLs, personal data, or IP addresses on our servers. All video downloads are processed in transient memory and automatically purged after download.</p>
+                <h5 class="font-bold text-gray-900 dark:text-white text-sm">2. Cookies & LocalStorage</h5>
+                <p>VidZora uses local browser storage solely to preserve your selected theme (dark/light mode) and recent downloads on your own machine. We do not use tracking or advertising cookies.</p>
+                <h5 class="font-bold text-gray-900 dark:text-white text-sm">3. Security</h5>
+                <p>All data transmitted through our servers is encrypted over TLS/HTTPS protocols.</p>
+            </div>
+            <button onclick="closeModal('privacy-modal')" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs">Close</button>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Terms of Service -->
+    <div id="terms-modal" class="modal-layer fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-8 max-w-xl w-full max-h-[85vh] overflow-y-auto space-y-4 shadow-2xl relative">
+            <button onclick="closeModal('terms-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2 text-purple-600 font-bold text-lg">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+                <span>Terms of Service</span>
+            </div>
+            <div class="text-xs text-gray-600 dark:text-gray-400 space-y-3 leading-relaxed">
+                <h5 class="font-bold text-gray-900 dark:text-white text-sm">1. Permitted Use</h5>
+                <p>VidZora is designed for personal, educational, and backup purposes. Users must possess the rights or fair-use justification for any media they download.</p>
+                <h5 class="font-bold text-gray-900 dark:text-white text-sm">2. Intellectual Property</h5>
+                <p>All trademarks, logos, and platform names (YouTube, TikTok, Instagram, etc.) belong to their respective copyright holders. VidZora is not affiliated with or endorsed by these platforms.</p>
+                <h5 class="font-bold text-gray-900 dark:text-white text-sm">3. Fair Service</h5>
+                <p>The service is provided "as-is" without warranty. Automated abuse or scraping of this service is prohibited.</p>
+            </div>
+            <button onclick="closeModal('terms-modal')" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs">I Agree</button>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Supported Sites Directory -->
+    <div id="supported-modal" class="modal-layer fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-4 shadow-2xl relative">
+            <button onclick="closeModal('supported-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2 text-purple-600 font-bold text-lg">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+                <span>1000+ Supported Websites</span>
+            </div>
+            <p class="text-xs text-gray-500">VidZora supports downloading video and audio from over 1,000+ streaming sites and social networks:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold">
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">🔴 YouTube & Shorts</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">📸 Instagram Reels</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">🎵 TikTok No-WM</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">🐦 Twitter / X Video</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">📘 Facebook Video</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">📌 Pinterest Pins</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">🟠 Reddit Videos</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">☁️ SoundCloud MP3</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">📺 Vimeo 4K</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">🟣 Twitch Clips</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">💼 LinkedIn Video</div>
+                <div class="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center gap-2">🎬 Dailymotion</div>
+            </div>
+            <button onclick="closeModal('supported-modal')" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs">Close Directory</button>
+        </div>
+    </div>
+
+    <!-- MODAL 4: FAQ -->
+    <div id="faq-modal" class="modal-layer fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-8 max-w-xl w-full max-h-[85vh] overflow-y-auto space-y-4 shadow-2xl relative">
+            <button onclick="closeModal('faq-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2 text-purple-600 font-bold text-lg">
+                <i data-lucide="help-circle" class="w-6 h-6"></i>
+                <span>Frequently Asked Questions</span>
+            </div>
+            <div class="space-y-3 text-xs">
+                <details class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-bold cursor-pointer text-gray-900 dark:text-white">Is VidZora completely free?</summary>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400">Yes! There are no limits, no subscriptions, and no hidden fees.</p>
+                </details>
+                <details class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-bold cursor-pointer text-gray-900 dark:text-white">Does VidZora add watermarks?</summary>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400">Never. You get the original clean video exactly as uploaded by the creator.</p>
+                </details>
+                <details class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-bold cursor-pointer text-gray-900 dark:text-white">Can I convert videos to MP3?</summary>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400">Yes! Choose the "Audio (MP3)" tab or chip to extract crystal clear 320kbps MP3 tracks.</p>
+                </details>
+                <details class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                    <summary class="font-bold cursor-pointer text-gray-900 dark:text-white">Where are downloaded files saved?</summary>
+                    <p class="mt-2 text-gray-500 dark:text-gray-400">Files save directly to your computer or phone's default "Downloads" folder.</p>
+                </details>
+            </div>
+            <button onclick="closeModal('faq-modal')" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs">Got it!</button>
+        </div>
+    </div>
+
+    <!-- MODAL 5: Blog Guides -->
+    <div id="blog-modal" class="modal-layer fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-8 max-w-xl w-full max-h-[85vh] overflow-y-auto space-y-4 shadow-2xl relative">
+            <button onclick="closeModal('blog-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2 text-purple-600 font-bold text-lg">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+                <span>VidZora Blog & Guides</span>
+            </div>
+            <div class="space-y-3 text-xs">
+                <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 space-y-1">
+                    <span class="text-[10px] font-bold text-purple-600 uppercase">Guide • 3 min read</span>
+                    <h5 class="font-bold text-gray-900 dark:text-white text-sm">How to Download TikTok Videos Without Watermark</h5>
+                    <p class="text-gray-500">Learn how to easily save TikTok videos in high definition with watermark removed.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 space-y-1">
+                    <span class="text-[10px] font-bold text-purple-600 uppercase">Audio • 2 min read</span>
+                    <h5 class="font-bold text-gray-900 dark:text-white text-sm">Extract 320kbps MP3 from YouTube Music</h5>
+                    <p class="text-gray-500">Discover how to save high bitrate audio files with complete artist and album metadata.</p>
+                </div>
+            </div>
+            <button onclick="closeModal('blog-modal')" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs hover:bg-purple-500 transition">Got it!</button>
+        </div>
+    </div>
+
+    <!-- MODAL 6: Live Video/Audio In-Browser Preview -->
+    <div id="preview-modal" class="modal-layer fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-gray-950 border border-gray-800 rounded-3xl p-5 sm:p-6 max-w-2xl w-full shadow-2xl relative space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-800/80 pb-3">
+                <div class="flex items-center gap-2.5 text-white font-bold text-sm min-w-0 pr-2">
+                    <div class="w-7 h-7 rounded-lg bg-purple-600/30 text-purple-400 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="play-circle" class="w-4 h-4"></i>
+                    </div>
+                    <span id="preview-title" class="truncate">Video Preview</span>
+                </div>
+                <button onclick="closePreviewModal()" class="text-gray-400 hover:text-white p-1.5 rounded-xl bg-gray-900 hover:bg-gray-800 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center shadow-inner border border-gray-900">
+                <video id="preview-video-player" controls playsinline preload="auto" class="w-full h-full object-contain"></video>
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-gray-400 pt-1">
+                <div class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Direct In-Browser Preview</span>
+                </div>
+                <button onclick="startDownload(); closePreviewModal();" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold flex items-center gap-1.5 shadow-lg shadow-purple-600/30 transition">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>Download Full File</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 7: PC to Mobile QR Code Transfer -->
+    <div id="qr-modal" class="modal-layer fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-7 max-w-sm w-full text-center space-y-4 shadow-2xl relative">
+            <button onclick="closeModal('qr-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded-lg">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 flex items-center justify-center mx-auto">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <h4 class="font-black text-base text-gray-900 dark:text-white">Download on Your Phone</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Scan this QR code with your mobile camera or WhatsApp to download directly.</p>
+            </div>
+
+            <!-- QR Container -->
+            <div class="p-3 bg-white rounded-2xl border border-gray-200 dark:border-gray-700 inline-block shadow-inner">
+                <img id="qr-image" src="" alt="Download QR" class="w-48 h-48 mx-auto">
+            </div>
+
+            <!-- Network Status Pill -->
+            <div id="qr-network-status" class="text-[11px] font-semibold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/50 py-1 px-3 rounded-full inline-block">
+                📱 Direct Mobile Scan Active
+            </div>
+
+            <!-- Action Buttons for Mobile Sharing -->
+            <div class="space-y-2 pt-1 text-xs">
+                <a id="qr-whatsapp-link" href="#" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition">
+                    <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Send Link to WhatsApp</span>
+                </a>
+                <button onclick="copyCurrentDownloadLink()" class="w-full py-2.5 px-4 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold flex items-center justify-center gap-1.5 transition">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Copy Direct Download Link</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 8: 1-Click Browser Bookmarklet -->
+    <div id="bookmarklet-modal" class="modal-layer fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-8 max-w-md w-full space-y-4 shadow-2xl relative text-xs">
+            <button onclick="closeModal('bookmarklet-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2 text-purple-600 font-bold text-base">
+                <i data-lucide="bookmark" class="w-5 h-5"></i>
+                <span>1-Click VidZora Bookmarklet</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">Download videos while browsing without leaving YouTube or Instagram!</p>
+            <div class="p-4 rounded-2xl bg-purple-50 dark:bg-purple-950/50 border border-purple-200 dark:border-purple-800 text-center space-y-2">
+                <span class="text-[11px] font-semibold text-gray-500">Drag this button to your Bookmarks Bar:</span>
+                <div>
+                    <a href="javascript:(function(){window.open(window.location.origin+'/?url='+encodeURIComponent(window.location.href));})();" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black text-xs shadow-lg shadow-purple-500/30 cursor-move">
+                        ⚡ Download with VidZora
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-1.5 text-gray-500 text-[11px]">
+                <p><b>How it works:</b></p>
+                <p>1. Drag the purple button above to your browser's Bookmarks bar.</p>
+                <p>2. While watching any video on YouTube, Instagram, or TikTok, click the bookmark.</p>
+                <p>3. VidZora automatically opens and extracts the video ready to download!</p>
+            </div>
+            <button onclick="closeModal('bookmarklet-modal')" class="w-full py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 font-bold text-xs text-gray-800 dark:text-gray-200">Close</button>
+        </div>
+    </div>
+
+    <!-- MODAL 9: Engaging Animated Download Processing Modal with Ad Placement -->
+    <div id="download-anim-modal" class="modal-layer fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-6 sm:p-7 max-w-md w-full text-center space-y-4 shadow-2xl relative">
+            <button onclick="closeDownloadAnimModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white p-1.5 rounded-xl bg-gray-100 dark:bg-gray-800 transition">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+
+            <!-- Animated Radar / Pulse Icon -->
+            <div class="relative w-20 h-20 mx-auto flex items-center justify-center">
+                <div class="absolute inset-0 rounded-full border-2 border-purple-500/30 anim-spin-slow"></div>
+                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-purple-600/10 to-pink-500/10 border-2 border-purple-500 flex items-center justify-center anim-download-glow">
+                    <div id="anim-icon-container">
+                        <i data-lucide="loader-2" class="w-8 h-8 text-purple-600 animate-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Heading & Details -->
+            <div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 font-black text-[10px] uppercase tracking-wider mb-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
+                    <span id="anim-quality-badge">720P HD</span> Stream Direct
+                </div>
+                <h4 id="anim-status-text" class="font-extrabold text-base text-gray-900 dark:text-white">Connecting to Ultra-Speed Stream...</h4>
+                <p id="anim-video-title" class="text-xs text-gray-500 dark:text-gray-400 truncate max-w-xs mx-auto mt-0.5">Video Title</p>
+            </div>
+
+            <!-- Animated Progress Bar -->
+            <div class="space-y-1.5 text-left bg-gray-50 dark:bg-gray-800/60 p-3.5 rounded-2xl border border-gray-100 dark:border-gray-800">
+                <div class="flex items-center justify-between text-xs font-bold">
+                    <span id="anim-step-desc" class="text-gray-600 dark:text-gray-300 text-[11px] truncate pr-2">Contacting video source CDN servers...</span>
+                    <span id="anim-percent" class="text-purple-600 dark:text-purple-400 flex-shrink-0">10%</span>
+                </div>
+                <div class="w-full h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div id="anim-bar-fill" class="h-full bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-500 rounded-full transition-all duration-500 ease-out" style="width: 10%"></div>
+                </div>
+            </div>
+
+            <!-- In-Modal Ad Placement Unit (Monetization While User Waits) -->
+            <div class="ad-slot-box rounded-2xl p-3 text-center min-h-[100px] flex flex-col items-center justify-center">
+                <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-1">Sponsored Advertisement</span>
+                <div class="text-xs font-semibold text-gray-600 dark:text-gray-300 flex items-center justify-center gap-2 py-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                    <span>High-Speed 4K Video Downloader • Free & Unlimited</span>
+                </div>
+                <!-- Google AdSense / Sponsor Slot ready -->
+                <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:100px" data-ad-client="ca-pub-..." data-ad-slot="..."></ins> -->
+            </div>
+
+            <!-- Done / Action Button -->
+            <button id="anim-action-btn" disabled class="w-full py-3 px-4 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-400 font-bold text-xs cursor-not-allowed">
+                Processing Stream (Please wait a second)...
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-3 rounded-2xl shadow-2xl text-xs font-bold flex items-center gap-2 transform translate-y-20 opacity-0 transition duration-300">
+        <i id="toast-icon" data-lucide="check" class="w-4 h-4 text-purple-400"></i>
+        <span id="toast-text">Action successful</span>
+    </div>
+
+    <script src="app.js?v=9.0"></script>
+</body>
+</html>
+

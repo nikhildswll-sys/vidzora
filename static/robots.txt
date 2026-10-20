@@ -1,0 +1,47 @@
+# Robots.txt for VidZora Pro Video & Media Downloader
+# Optimized for Google, Bing, Yandex, DuckDuckGo & Social Bots
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Googlebot Crawlers
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /icon-192.png
+Allow: /icon-512.png
+
+# Bing & Yahoo Crawlers
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+
+# Social Media Scraping Bots for Rich Card Previews
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Canonical Sitemaps
+Sitemap: /sitemap.xml

@@ -1,0 +1,8 @@
+.git
+.firebase
+downloads/*
+!downloads/.gitkeep
+cloudflared.exe
+__pycache__
+*.pyc
+.env
